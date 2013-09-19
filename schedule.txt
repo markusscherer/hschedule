@@ -1,0 +1,47 @@
+# Monday
+10:30 12:00 .AStyle
+Subject A
+Room A
+
+13:45 15:45 .BStyle
+Subject B
+Room B
+
+14:00 15:45
+\small{small print is also possible}
+Room S
+
+# Tuesday
+09:00	11:00 .AStyle
+Subject A
+Room A
+
+
+12:30 14:30 .CStyle
+Subject C
+Room C
+CCC
+
+# Wednesday
+09:00 11:00 .BStyle
+Subject B
+Room B
+
+12:30 14:30 .CStyle
+Subject C
+Room C
+CCC
+
+16:00 18:00
+Simple Lecture
+
+# Thursday
+
+# Friday
+08:00 10:00
+Simple Lecture
+
+9:45 11:15 .CStyle
+Subject C
+Room C
+CCC

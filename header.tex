@@ -1,0 +1,93 @@
+\documentclass[landscape]{article}
+\usepackage{tikz}
+\usepackage[cm]{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{varwidth}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagenumbering{gobble}
+
+\begin{document}
+
+% These set the width of a day and the height of an hour.
+\newcommand*\daywidth{4.5cm}
+\newcommand*\hourheight{3.5em}
+
+% This style is used for entries without a explicit style
+\tikzset{entrystyle/.style 2 args={
+    fill=gray!30,
+    rectangle,
+    anchor=north west,
+    align=left,
+    inner sep=0.2em,
+    text width={\daywidth/#2-0.4em},
+    minimum height=#1*\hourheight,
+}}
+
+% explicit style .AStyle
+\tikzset{entrystyleAStyle/.style 2 args={
+    entrystyle={#1}{#2},
+    fill=blue!25,
+}}
+
+% explicit style .BStyle
+\tikzset{entrystyleBStyle/.style 2 args={
+    entrystyle={#1}{#2},
+    fill=cyan!25,
+}}
+
+% explicit style .CStyle
+\tikzset{entrystyleCStyle/.style 2 args={
+    entrystyle={#1}{#2},
+    fill=orange!25,
+}}
+
+% This style is used for the times on the left side.
+\tikzset{timestyle/.style={
+  draw,
+  fill=green!20,
+  anchor=north east,
+  outer sep=0.0pt,
+  minimum height=\hourheight
+}}
+
+% This style is used for the headers on the top
+\tikzset{headerstyle/.style={
+  draw,
+  fill=yellow!10,
+  anchor=north,
+  minimum width=\daywidth,
+  minimum height=\hourheight
+}}
+
+% This command is used for entries with 3 parameters (including start and end time)
+\newcommand{\entryIII}[3] {
+      {\small{#1} - \small{#2}} \linebreak
+      {\textbf{#3}} \linebreak
+}
+
+% This command is used for entries with 4 parameters (including start and end time)
+\newcommand{\entryIV}[4] {
+      {\small{#1} - \small{#2}} \linebreak
+      {\textbf{#3}} \linebreak
+      {#4}
+}
+
+% This command is used for entries with 5 parameters (including start and end time)
+\newcommand{\entryV}[5] {
+      {\small{#1} - \small{#2}} \linebreak
+      {\textbf{#3}} \linebreak
+      {#4 \hfill #5}
+}
+
+\newcommand{\timeentry}[2] {
+  \large{#1 - #2}
+}
+
+\newcommand{\headerentry}[1] {
+  \textbf{\large{#1}}
+}
+
+% Start the picture and set the x coordinate to correspond to days and the y
+% coordinate to correspond to hours (y should point downwards).
+\begin{tikzpicture}[y=-\hourheight,x=\daywidth]
