@@ -36,7 +36,7 @@ line one
 line two
 ```
 
-The the optional style tag translates into a `entrystyle&lt;Stylename&gt;` style
+The the optional style tag translates into a `entrystyle<Stylename>` style
 specification used for the generated nodes (which has to be specified in
 `header.tex`).
 
